@@ -14,8 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProfileController = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
-const product_1 = __importDefault(require("../model/product"));
-const Profile = mongoose_1.default.model('Profile', product_1.default);
+const profile_1 = __importDefault(require("../model/profile"));
+const Profile = mongoose_1.default.model('Profile', profile_1.default);
 const profile = new Profile({
     name: "John Doe",
     age: 30,
@@ -42,6 +42,11 @@ class ProfileController {
                 });
             }
             catch (error) {
+                console.log(error);
+                return res.json({
+                    status: error,
+                    "message": "catch bloc "
+                });
             }
         });
     }

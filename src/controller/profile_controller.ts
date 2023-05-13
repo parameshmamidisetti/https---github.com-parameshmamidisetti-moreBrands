@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
-import productSchema from "../model/product";
+
 import { Request, Response } from "express";
+import profileSchema from "../model/profile";
 
 
 
-const Profile = mongoose.model('Profile', productSchema);
+const Profile = mongoose.model('Profile', profileSchema);
 
 
 
@@ -38,7 +39,14 @@ export class ProfileController {
             )
 
         } catch (error) {
+            console.log(error);
 
+            return res.json(
+                {
+                    status: error,
+                    "message": "catch bloc "
+                }
+            )
         }
     }
     async updateProfile(req: Request, res: Response) {
