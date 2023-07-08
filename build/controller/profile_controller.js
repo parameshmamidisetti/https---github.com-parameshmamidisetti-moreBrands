@@ -31,6 +31,11 @@ class ProfileController {
     }
     getProfiles(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            const result = yield Profile.find({});
+            return res.json({
+                status: 1,
+                profiles: result
+            });
         });
     }
     createProfile(req, res) {

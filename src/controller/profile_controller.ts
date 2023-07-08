@@ -26,6 +26,14 @@ export class ProfileController {
     }
 
     async getProfiles(req: Request, res: Response) {
+        const result = await Profile.find({})
+
+        return res.json(
+            {
+                status: 1,
+                profiles: result
+            }
+        )
 
     }
     async createProfile(req: Request, res: Response) {

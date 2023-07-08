@@ -110,10 +110,23 @@ export class OrderController {
 
 
     async getOrder(req: Request, res: Response) {
-
+        const result = await Order.find({})
+        // return res.json(
+        //     {
+        //         status: 1,
+        //         orders: result
+        //     }
+        // )
     }
 
     async getOrders(req: Request, res: Response) {
+        const result = await Order.find({})
+        return res.json(
+            {
+                status: 1,
+                orders: result
+            }
+        )
 
     }
     async createOrder(req: Request, res: Response) {

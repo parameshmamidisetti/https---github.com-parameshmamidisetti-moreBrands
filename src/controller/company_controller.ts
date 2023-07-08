@@ -174,7 +174,13 @@ export class CompanyController {
 
     // Get all products
     async getCompanies(req: Request, res: Response) {
-
+        const result = await Company.find({})
+        return res.json(
+            {
+                status: 1,
+                companies: result
+            }
+        )
     }
 
     // Get a single product

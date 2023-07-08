@@ -108,10 +108,22 @@ const orders = [order1, order2, order3, order4, order5, order6, order7, order8, 
 class OrderController {
     getOrder(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            const result = yield Order.find({});
+            // return res.json(
+            //     {
+            //         status: 1,
+            //         orders: result
+            //     }
+            // )
         });
     }
     getOrders(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            const result = yield Order.find({});
+            return res.json({
+                status: 1,
+                orders: result
+            });
         });
     }
     createOrder(req, res) {

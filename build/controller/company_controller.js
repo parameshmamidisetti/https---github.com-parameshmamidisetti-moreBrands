@@ -164,6 +164,11 @@ class CompanyController {
     // Get all products
     getCompanies(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            const result = yield Company.find({});
+            return res.json({
+                status: 1,
+                companies: result
+            });
         });
     }
     // Get a single product
